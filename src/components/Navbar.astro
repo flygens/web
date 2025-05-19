@@ -1,0 +1,121 @@
+---
+import  Menu  from "@lucide/astro/icons/menu";
+
+import logo from "~/assets/logo.svg";
+import { Button } from "~/components/starwind/button";
+import {
+    Dropdown,
+    DropdownContent,
+    DropdownItem,
+    DropdownTrigger,
+} from "~/components/starwind/dropdown";
+
+const navItems = [
+    { label: "Inicio", href: "#" },
+    { label: "Cómo Funciona", href: "#how-it-works" },
+    { label: "Características", href: "#features" },
+    { label: "Casos de Uso", href: "#use-cases" },
+];
+---
+
+<header
+    id="navbar"
+    class="fixed left-0 right-0 top-0 z-50 transition-all duration-300 bg-transparent"
+>
+    <div class="container mx-auto px-4">
+        <div class="flex h-16 items-center justify-between md:h-20">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2">
+                <img src={logo.src} alt="logo" class="h-8 w-8 rounded-full" />
+                <span class="text-xl font-bold text-white">Flygens</span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex md:items-center md:gap-8">
+                {
+                    navItems.map((item) => (
+                        <a
+                            href={item.href}
+                            class="text-sm text-muted-foreground transition-colors hover:text-white"
+                        >
+                            {item.label}
+                        </a>
+                    ))
+                }
+            </nav>
+
+            <!-- CTA Button (Desktop) -->
+            <div class="hidden md:block">
+                <Button
+                    class="bg-gradient-to-r from-blue-600 to-purple-600 text-white"
+                    >¿Como funciona?</Button
+                >
+            </div>
+
+            <!-- Mobile Menu Trigger -->
+            <Dropdown>
+                <DropdownTrigger class="md:hidden" asChild>
+                    <Button variant="ghost" size="icon" class="text-white">
+                        <Menu class="h-6 w-6" />
+                        <span class="sr-only">Toggle menu</span>
+                    </Button>
+                </DropdownTrigger>
+                <DropdownContent
+                    align="end"
+                    class="w-[calc(100vw-2rem)] max-w-[20rem] border-white/10 bg-black/95 p-2"
+                >
+                    {
+                        navItems.map((item) => (
+                            <DropdownItem class="py-3 text-base text-white focus:bg-white/10">
+                                <a href={item.href}>{item.label}</a>
+                            </DropdownItem>
+                        ))
+                    }
+                    <div class="mt-2 pt-2 border-t border-white/10">
+                        <Button
+                            class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white"
+                        >
+                            ¿Como funciona?
+                        </Button>
+                    </div>
+                </DropdownContent>
+            </Dropdown>
+        </div>
+    </div>
+</header>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const navbar = document.getElementById("navbar");
+
+        window.addEventListener("scroll", () => {
+            if (navbar) {
+                if (window.scrollY > 10) {
+                    navbar.classList.add(
+                        "bg-background/80",
+                        "backdrop-blur-md",
+                    );
+                } else {
+                    navbar.classList.remove(
+                        "bg-background/80",
+                        "backdrop-blur-md",
+                    );
+                }
+            }
+        });
+    });
+</script>
+
+<style>
+    .bg-background\/80 {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .backdrop-blur-md {
+        backdrop-filter: blur(12px);
+    }
+
+    .text-muted-foreground {
+        color: #ccc;
+    }
+</style>

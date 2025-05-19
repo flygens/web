@@ -1,0 +1,48 @@
+---
+const { defaultTheme = "dark", storageKey = "ui-theme" } = Astro.props;
+---
+
+<script define:vars={{ defaultTheme, storageKey }}>
+    function getInitialTheme(storageKey, defaultTheme) {
+        const storedTheme = localStorage.getItem(storageKey);
+        return storedTheme || defaultTheme;
+    }
+
+    // Aplicar el tema al documento
+    function applyTheme(theme) {
+        const root = document.documentElement;
+
+        // Eliminar clases anteriores
+        root.classList.remove("light", "dark");
+
+        if (theme === "system") {
+            const systemTheme = window.matchMedia(
+                "(prefers-color-scheme: dark)",
+            ).matches
+                ? "dark"
+                : "light";
+            root.classList.add(systemTheme);
+        } else {
+            root.classList.add(theme);
+        }
+    }
+
+    // Obtener el tema inicial
+    const initialTheme = getInitialTheme(storageKey, defaultTheme);
+    applyTheme(initialTheme);
+
+    // Exportar el estado inicial como contexto
+    const themeContext = {
+        theme: initialTheme,
+        setTheme: (newTheme) => {
+            localStorage.setItem(storageKey, newTheme);
+            applyTheme(newTheme);
+            themeContext.theme = newTheme; // Actualizar el estado interno
+        },
+    };
+</script>
+
+<!-- Contenido del proveedor -->
+<div>
+    <slot />
+</div>

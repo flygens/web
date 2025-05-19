@@ -1,0 +1,106 @@
+---
+import Database from "@lucide/astro/icons/database";
+import FileText from "@lucide/astro/icons/file-text";
+import Zap from "@lucide/astro/icons/zap";
+import Layers from "@lucide/astro/icons/layers";
+import MessageCircle from "@lucide/astro/icons/message-circle";
+
+const features = [
+    {
+        icon: Database,
+        title: "Motor RAG",
+        description:
+            "Generación potente con recuperación aumentada para respuestas precisas y conscientes del contexto.",
+        color: "bg-blue-500/10 text-blue-400 border-blue-500/20",
+    },
+    {
+        icon: FileText,
+        title: "Ingesta de Documentos",
+        description:
+            "Procesamiento fluido de PDFs, documentos de Word y Markdown con análisis avanzado.",
+        color: "bg-indigo-500/10 text-indigo-400 border-indigo-500/20",
+    },
+    {
+        icon: Zap,
+        title: "Detección de Lagunas de Conocimiento",
+        description:
+            "Identifica información faltante y sugiere mejoras para tu base de conocimientos.",
+        color: "bg-purple-500/10 text-purple-400 border-purple-500/20",
+    },
+    {
+        icon: Layers,
+        title: "Soporte Multi-Formato",
+        description:
+            "Compatibilidad con varios formatos de documentos con preservación inteligente de estructura.",
+        color: "bg-pink-500/10 text-pink-400 border-pink-500/20",
+    },
+    {
+        icon: MessageCircle,
+        title: "Interfaz de Chat",
+        description:
+            "Interfaz de conversación intuitiva para interacciones naturales con tus agentes de IA.",
+        color: "bg-cyan-500/10 text-cyan-400 border-cyan-500/20",
+    },
+];
+---
+
+<section id="features" class="py-20 md:py-28">
+    <div class="container mx-auto px-4">
+        <div class="mb-16 text-center">
+            <h2
+                class="mb-4 text-3xl font-bold text-white md:text-4xl fade-in-up"
+            >
+                Características
+            </h2>
+            <p class="mx-auto max-w-2xl text-muted-foreground fade-in-up">
+                Potentes capacidades que hacen de Flygens una plataforma
+                destacada para agentes de IA conectados a documentos.
+            </p>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {
+                features.map((feature, index) => (
+                    <div
+                        class="fade-in-up"
+                        style={`animation-delay: ${index * 0.1}s`}
+                    >
+                        <div class="border border-white/10 bg-black/40 backdrop-blur-sm rounded-lg overflow-hidden shadow-md">
+                            <div class="p-6">
+                                <div
+                                    class={`mb-3 inline-flex rounded-lg border p-2 ${feature.color}`}
+                                >
+                                    <feature.icon class="h-6 w-6" />
+                                </div>
+                                <h3 class="text-lg font-semibold text-white">
+                                    {feature.title}
+                                </h3>
+                                <p class="mt-2 text-muted-foreground">
+                                    {feature.description}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Animaciones */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .fade-in-up {
+        animation: fadeInUp 0.5s ease-out forwards;
+    }
+</style>
