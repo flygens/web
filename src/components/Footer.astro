@@ -3,6 +3,7 @@ import Github from "~/icons/Github.astro";
 import X from "~/icons/X.astro";
 import Linkedin from "~/icons/Linkedin.astro";
 import Instagram from "~/icons/Instagram.astro";
+import logo from "~/assets/logo.svg";
 
 const currentYear = new Date().getFullYear();
 const navLinks = [
@@ -20,16 +21,11 @@ const navLinks = [
         <div
             class="flex flex-col items-center justify-between gap-6 md:flex-row"
         >
-            <!-- Logo -->
-            <div class="flex items-center">
-                <div
-                    class="mr-2 h-8 w-8 rounded-full bg-gradient-to-r from-blue-500 to-purple-600"
-                >
-                </div>
+            <a href="#" class="flex items-center gap-2">
+                <img src={logo.src} alt="logo" class="h-8 w-8 rounded-full" />
                 <span class="text-xl font-bold text-white">Flygens</span>
-            </div>
+            </a>
 
-            <!-- Enlaces de navegación -->
             <div
                 class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-sm text-muted-foreground"
             >

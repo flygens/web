@@ -14,6 +14,10 @@
     {
       "name": "dropdown",
       "version": "1.0.1"
+    },
+    {
+      "name": "badge",
+      "version": "1.1.1"
     }
   ]
 }

@@ -1,13 +1,14 @@
-import tailwindcss from '@tailwindcss/vite';
+import tailwindcss from "@tailwindcss/vite";
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
-import cloudflare from '@astrojs/cloudflare';
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  vite: {
-    plugins: [tailwindcss()],
-  },
-  adapter: cloudflare(),
+	vite: {
+		plugins: [tailwindcss()],
+	},
+	site: "https://www.flygens.com",
+	integrations: [sitemap()],
 });

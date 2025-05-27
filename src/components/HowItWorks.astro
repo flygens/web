@@ -1,29 +1,37 @@
 ---
-import  Cpu from "@lucide/astro/icons/cpu";
-import  FileText from "@lucide/astro/icons/file-text";
-import  MessageSquare from "@lucide/astro/icons/message-square";
+import Puzzle from "@lucide/astro/icons/puzzle";
+import Zap from "@lucide/astro/icons/zap";
+import FileText from "@lucide/astro/icons/file-text";
+import MessageSquare from "@lucide/astro/icons/message-square";
 
 const steps = [
     {
         icon: FileText,
-        title: "Subir Documentos",
+        title: "Sube Documentos",
         description:
-            "Sube tus PDFs, documentos de Word o archivos Markdown a Flygens.",
+            "Carga tus PDFs, documentos de Word o archivos Markdown para crear tu base de conocimiento.",
         color: "from-blue-500 to-blue-600",
     },
     {
-        icon: Cpu,
-        title: "Crea Tu Agente",
+        icon: Puzzle,
+        title: "Agrega Herramientas MCP",
         description:
-            "Personaliza tu agente de IA con conocimientos y capacidades específicas.",
+            "Conecta herramientas MCP ilimitadas: APIs, bases de datos, datos en tiempo real e integraciones personalizadas.",
         color: "from-indigo-500 to-indigo-600",
     },
     {
-        icon: MessageSquare,
-        title: "Habla Con Él",
+        icon: Zap,
+        title: "Construye Tu Agente",
         description:
-            "Tu agente está listo. Puede responder preguntas, resolver dudas y entregar información útil en tiempo real.",
+            "Personaliza tu agente de IA con documentos, MCPs y capacidades específicas.",
         color: "from-purple-500 to-purple-600",
+    },
+    {
+        icon: MessageSquare,
+        title: "Interactúa y Ejecuta",
+        description:
+            "Chatea con tu agente para consultar documentos, ejecutar acciones y acceder a datos en vivo.",
+        color: "from-pink-500 to-pink-600",
     },
 ];
 ---
@@ -37,8 +45,8 @@ const steps = [
                 Cómo Funciona
             </h2>
             <p class="mx-auto max-w-2xl text-muted-foreground fade-in-up">
-                Tres pasos sencillos para transformar tus documentos en agentes
-                de IA interactivos.
+                Cuatro sencillos pasos para crear agentes de IA con capacidades
+                ilimitadas a través de documentos e integraciones MCP.
             </p>
         </div>
 
@@ -88,21 +96,3 @@ const steps = [
         </div>
     </div>
 </section>
-
-<style>
-    /* Animaciones */
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .fade-in-up {
-        animation: fadeInUp 0.5s ease-out forwards;
-    }
-</style>

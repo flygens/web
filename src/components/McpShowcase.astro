@@ -1,0 +1,126 @@
+---
+import Database from "@lucide/astro/icons/database";
+import Globe from "@lucide/astro/icons/globe";
+import Code from "@lucide/astro/icons/code";
+import Calendar from "@lucide/astro/icons/calendar";
+import Badge from "./starwind/badge";
+
+const mcpCategories = [
+  {
+    title: "Datos y APIs",
+    description:
+      "Conéctate a cualquier API REST, punto final de GraphQL o base de datos",
+    icon: Database,
+    examples: ["PostgreSQL", "MongoDB", "APIs REST", "GraphQL"],
+    color: "from-blue-500 to-blue-600",
+  },
+  {
+    title: "Web y Búsqueda",
+    description: "Accede a datos web en tiempo real y capacidades de búsqueda",
+    icon: Globe,
+    examples: ["Búsqueda Web", "APIs de Noticias", "Redes Sociales", "Clima"],
+    color: "from-indigo-500 to-indigo-600",
+  },
+  {
+    title: "Desarrollo",
+    description:
+      "Ejecuta código, gestiona repositorios y herramientas de desarrollo",
+    icon: Code,
+    examples: ["GitHub", "Ejecución de Código", "Docker", "CI/CD"],
+    color: "from-purple-500 to-purple-600",
+  },
+  {
+    title: "Productividad",
+    description:
+      "Integrate con calendarios, correo electrónico y suites de productividad",
+    icon: Calendar,
+    examples: ["Google Calendar", "Gmail", "Slack", "Notion"],
+    color: "from-pink-500 to-pink-600",
+  },
+];
+---
+
+<section class="py-20 md:py-28">
+  <div class="container mx-auto px-4">
+    <div class="mb-16 text-center">
+      <h2 class="mb-4 text-3xl font-bold text-white md:text-4xl fade-in-up">
+        Integraciones MCP Ilimitadas
+      </h2>
+      <p class="mx-auto max-w-2xl text-muted-foreground fade-in-up">
+        Conecta tus agentes de IA a cualquier servicio, API o herramienta a
+        través del Protocolo de Contexto de Modelo
+      </p>
+    </div>
+
+    <div class="grid gap-8 md:grid-cols-2">
+      {
+        mcpCategories.map((category, index) => (
+          <div class="fade-in-up" style={`animation-delay: ${index * 0.1}s`}>
+            <div class="border border-white/10 bg-black/40 backdrop-blur-sm rounded-lg overflow-hidden shadow-md">
+              <div class="p-6">
+                <div class="flex items-center gap-3">
+                  <div
+                    class={`p-2 rounded-lg bg-gradient-to-r ${category.color}`}
+                  >
+                    <category.icon class="h-6 w-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 class="text-lg font-semibold text-white">
+                      {category.title}
+                    </h3>
+                    <p class="mt-2 text-muted-foreground">
+                      {category.description}
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex flex-wrap gap-2 pt-2">
+                  {category.examples.map((example) => (
+                    <Badge
+                      variant="outline"
+                      class="bg-white/5 text-muted-foreground"
+                    >
+                      {example}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div
+      class="fade-in-up pt-12"
+      style={`animation-delay: ${mcpCategories.length * 0.1}s`}
+    >
+      <div
+        class="rounded-xl border border-white/10 bg-black/40 p-6 backdrop-blur-sm md:p-8 text-center"
+      >
+        <h3 class="mb-4 text-xl font-semibold text-white">
+          ¿No encuentras lo que necesitas?
+        </h3>
+        <p class="mb-6 text-muted-foreground">
+          Crea MCPs personalizados o solicita nuevas integraciones. Nuestra
+          plataforma admite cualquier herramienta que implemente el Protocolo de
+          Contexto de Modelo.
+        </p>
+        <div class="flex flex-col gap-4 sm:flex-row sm:justify-center">
+          <Badge
+            variant="outline"
+            class="bg-green-500/10 text-green-400 border-green-500/20"
+          >
+            Desarrollo Personalizado de MCP
+          </Badge>
+          <Badge
+            variant="outline"
+            class="bg-blue-500/10 text-blue-400 border-blue-500/20"
+          >
+            Integraciones Empresariales
+          </Badge>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

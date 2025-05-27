@@ -3,35 +3,51 @@ import Users from "@lucide/astro/icons/users";
 import BookOpen from "@lucide/astro/icons/book-open";
 import HelpCircle from "@lucide/astro/icons/circle-help";
 import Lightbulb from "@lucide/astro/icons/lightbulb";
+import TrendingUp from "@lucide/astro/icons/trending-up";
+import Shield from "@lucide/astro/icons/shield";
 
 const useCases = [
     {
         icon: BookOpen,
-        title: "Investigadores",
+        title: "Investigación y Análisis",
         description:
-            "Extrae información de artículos de investigación y documentos académicos.",
+            "Combina análisis de documentos con acceso a datos en tiempo real, búsqueda web y herramientas computacionales.",
         color: "from-blue-500 to-blue-600",
     },
     {
         icon: HelpCircle,
-        title: "Equipos de Soporte",
+        title: "Soporte Inteligente",
         description:
-            "Crea agentes de IA que respondan preguntas desde tu base de conocimientos.",
+            "Crea agentes de soporte que accedan a bases de conocimiento, sistemas de tickets y datos de clientes en vivo.",
         color: "from-indigo-500 to-indigo-600",
     },
     {
         icon: Lightbulb,
-        title: "Equipos de Producto",
+        title: "Desarrollo de Productos",
         description:
-            "Construye asistentes de IA que comprendan la documentación de tu producto.",
+            "Construye agentes que comprendan documentos, accedan a APIs, ejecuten código e integren herramientas de desarrollo.",
         color: "from-purple-500 to-purple-600",
     },
     {
-        icon: Users,
-        title: "RRHH y Legal",
+        icon: TrendingUp,
+        title: "Inteligencia de Negocios",
         description:
-            "Crea agentes que entiendan las políticas y procedimientos de la empresa.",
+            "Combina informes con consultas en tiempo real a bases de datos, datos de mercado y análisis automatizado.",
         color: "from-pink-500 to-pink-600",
+    },
+    {
+        icon: Users,
+        title: "Recursos Humanos y Operaciones",
+        description:
+            "Agentes que comprendan políticas, accedan a sistemas de RR.HH., calendarios y herramientas de comunicación.",
+        color: "from-cyan-500 to-cyan-600",
+    },
+    {
+        icon: Shield,
+        title: "Cumplimiento y Legal",
+        description:
+            "Analiza documentos accediendo a bases de datos regulatorias y herramientas de monitoreo de cumplimiento.",
+        color: "from-green-500 to-green-600",
     },
 ];
 ---
@@ -43,11 +59,11 @@ const useCases = [
             <h2
                 class="fade-in-up mb-4 text-3xl font-bold text-white md:text-4xl"
             >
-                Para Quién Es
+                Posibilidades Infinitas
             </h2>
             <p class="fade-in-up mx-auto max-w-2xl text-muted-foreground">
-                Flygens ayuda a equipos de diversas industrias a aprovechar sus
-                documentos con IA
+                Con comprensión de documentos e integraciones ilimitadas de MCP,
+                crea agentes de IA para cualquier industria o caso de uso.
             </p>
         </div>
 
@@ -78,21 +94,3 @@ const useCases = [
         </div>
     </div>
 </section>
-
-<style>
-    /* Animaciones */
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .fade-in-up {
-        animation: fadeInUp 0.5s ease-out forwards;
-    }
-</style>

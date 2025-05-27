@@ -1,45 +1,53 @@
 ---
 import Database from "@lucide/astro/icons/database";
+import Puzzle from "@lucide/astro/icons/puzzle";
 import FileText from "@lucide/astro/icons/file-text";
-import Zap from "@lucide/astro/icons/zap";
-import Layers from "@lucide/astro/icons/layers";
+import Globe from "@lucide/astro/icons/globe";
+import Code from "@lucide/astro/icons/code";
 import MessageCircle from "@lucide/astro/icons/message-circle";
 
 const features = [
     {
         icon: Database,
-        title: "Motor RAG",
+        title: "Motor Avanzado de RAG",
         description:
-            "Generación potente con recuperación aumentada para respuestas precisas y conscientes del contexto.",
+            "Generación aumentada por recuperación potente para respuestas precisas y conscientes del contexto a partir de tus documentos.",
         color: "bg-blue-500/10 text-blue-400 border-blue-500/20",
     },
     {
-        icon: FileText,
-        title: "Ingesta de Documentos",
+        icon: Puzzle,
+        title: "Integración Ilimitada de MCP",
         description:
-            "Procesamiento fluido de PDFs, documentos de Word y Markdown con análisis avanzado.",
+            "Conecta cualquier herramienta MCP: APIs, bases de datos, servicios en tiempo real e integraciones personalizadas.",
         color: "bg-indigo-500/10 text-indigo-400 border-indigo-500/20",
     },
     {
-        icon: Zap,
-        title: "Detección de Lagunas de Conocimiento",
+        icon: FileText,
+        title: "Documentos Multi-Formato",
         description:
-            "Identifica información faltante y sugiere mejoras para tu base de conocimientos.",
+            "Procesa sin problemas PDFs, documentos de Word, Markdown y más con análisis inteligente.",
         color: "bg-purple-500/10 text-purple-400 border-purple-500/20",
     },
     {
-        icon: Layers,
-        title: "Soporte Multi-Formato",
+        icon: Globe,
+        title: "Acceso a Datos en Tiempo Real",
         description:
-            "Compatibilidad con varios formatos de documentos con preservación inteligente de estructura.",
+            "Accede a datos en vivo desde APIs web, bases de datos y servicios externos a través de MCPs.",
         color: "bg-pink-500/10 text-pink-400 border-pink-500/20",
     },
     {
-        icon: MessageCircle,
-        title: "Interfaz de Chat",
+        icon: Code,
+        title: "Ejecución de Código",
         description:
-            "Interfaz de conversación intuitiva para interacciones naturales con tus agentes de IA.",
+            "Ejecuta código, corre scripts y realiza cálculos complejos a través de herramientas MCP.",
         color: "bg-cyan-500/10 text-cyan-400 border-cyan-500/20",
+    },
+    {
+        icon: MessageCircle,
+        title: "Interfaz de Chat Inteligente",
+        description:
+            "Interfaz de usuario conversacional natural que maneja sin problemas documentos, MCPs y flujos de trabajo complejos.",
+        color: "bg-green-500/10 text-green-400 border-green-500/20",
     },
 ];
 ---
@@ -53,8 +61,9 @@ const features = [
                 Características
             </h2>
             <p class="mx-auto max-w-2xl text-muted-foreground fade-in-up">
-                Potentes capacidades que hacen de Flygens una plataforma
-                destacada para agentes de IA conectados a documentos.
+                Desde comprensión de documentos hasta integraciones ilimitadas
+                de herramientas: todo lo que necesitas para construir agentes de
+                IA potentes
             </p>
         </div>
 
@@ -86,21 +95,3 @@ const features = [
         </div>
     </div>
 </section>
-
-<style>
-    /* Animaciones */
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .fade-in-up {
-        animation: fadeInUp 0.5s ease-out forwards;
-    }
-</style>
